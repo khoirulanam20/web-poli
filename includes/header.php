@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <script src="../assets/js/script.js"></script>
+    <style>
+        /* Full height layout */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto; /* Make content area take up remaining space */
+        }
+        .footer {
+            flex-shrink: 0; /* Prevent footer from shrinking */
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,6 +38,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="informasi_lain.php">Informasi Kesehatan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bmi.php">Hitung BMI</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../pages/login.php">

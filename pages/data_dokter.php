@@ -119,4 +119,4 @@ $result_dokter = $conn->query($sql_dokter);
 </body>
 </html>
 
-<?php include('../includes/footer.php'); // Pastikan path dan nama file footer.php yang benar ?>
+<?php include('../includes/footer.php'); ?>

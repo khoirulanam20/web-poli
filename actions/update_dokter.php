@@ -16,11 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("sssi", $nama, $alamat, $no_hp, $id_dokter);
 
         if ($stmt->execute()) {
-            header("Location: ../pages/data_dokter.php?update_success=true");
-            exit();
+            $_SESSION['status'] = "Data dokter berhasil diubah.";
         } else {
-            echo "Error: " . $stmt->error;
+            $_SESSION['status'] = "Terjadi kesalahan saat menghapus data dokter: " . $stmt_delete_dokter->error;
         }
+    
+        // Redirect kembali ke halaman dashboard.php
+        header("Location: ../pages/dashboard.php");
+        exit;
     } else {
         echo "Parameter tidak valid.";
     }

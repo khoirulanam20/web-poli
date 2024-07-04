@@ -212,8 +212,8 @@ $result_periksa = $conn->query($sql_periksa);
                                 // Aksi: Ubah, Hapus, dan Nota (disesuaikan dengan kebutuhan Anda)
                                 echo "<td>
                                         <div class='d-block'>
-                                            <a href='../actions/hapus_admin.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm mb-1' onclick='return confirm(\"Anda yakin ingin menghapus data ini?\")'>Hapus</a>
-                                            <a href='ubah_periksa_admin.php?id_periksa=" . $row['id'] . "' class='btn btn-warning btn-sm mb-1'>Ubah</a>
+                                            <a href='../actions/hapus.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm mb-1' onclick='return confirm(\"Anda yakin ingin menghapus data ini?\")'>Hapus</a>
+                                            <a href='ubah_periksa.php?id_periksa=" . $row['id'] . "' class='btn btn-warning btn-sm mb-1'>Ubah</a>
                                             <a href='../pages/nota.php?id_periksa=" . $row['id'] . "' class='btn btn-primary btn-sm'>Nota</a>
                                         </div>
                                     </td>";

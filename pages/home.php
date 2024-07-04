@@ -5,14 +5,14 @@
         background-image: url('../assets/img/pelayanan.png');
         background-size: cover;
         background-position: center;
-        height: 100vh; /* Set tinggi sesuai dengan viewport height */
+        height: 95vh;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        position: relative; /* Menetapkan posisi relatif untuk kontainer */
-        overflow: hidden; /* Mengatur overflow agar tetap di dalam kontainer */
-        color: #fff; /* Warna teks putih agar kontras dengan latar belakang */
+        position: relative;
+        overflow: hidden;
+        color: #fff;
     }
 
     .landing-overlay {
@@ -21,18 +21,18 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.4); /* Warna overlay transparan */
+        background-color: rgba(0, 0, 0, 0.4);
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        z-index: 1; /* Menempatkan overlay di atas gambar */
+        z-index: 1;
     }
 
     .landing-content {
         padding: 0 15px;
-        position: relative; /* Menetapkan posisi relatif untuk konten di dalam overlay */
-        z-index: 2; /* Menempatkan konten di atas overlay */
+        position: relative;
+        z-index: 2;
     }
 </style>
 
@@ -50,12 +50,16 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-4">
+    <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Layanan</h5>
+                    <h5 class="card-title">Cek Body Mass Index</h5>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="periksa_pasien.php">Periksa Pasien</a></li>
+                        <li class="list-group-item" id="current-date"></li>
+                    </ul>
+                    <ul class="list-group list-group-flush">
+                    <a href="bmi.php" class="btn btn-info">Hitung BMI</a>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -73,3 +77,20 @@
 </div>
 
 <?php include('../includes/footer.php'); ?>
+
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Mengambil tanggal hari ini dengan JavaScript
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentDate = new Date();
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var formattedDate = currentDate.toLocaleDateString('id-ID', options);
+
+        document.getElementById("current-date").innerText = formattedDate;
+    });
+</script>
+</body>
+</html>

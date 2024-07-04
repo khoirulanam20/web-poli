@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ssdi", $nama_obat, $kemasan, $harga, $id_obat);
 
         if ($stmt->execute()) {
-            header("Location: ../pages/data_obat.php?id_obat=$id_obat&update_success=true");
+            header("Location: ../pages/dashboard.php?id_obat=$id_obat&update_success=true");
         } else {
             echo "Error: " . $conn->error;
         }

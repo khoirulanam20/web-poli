@@ -1,7 +1,4 @@
 <?php
-include('../includes/header.php'); // Pastikan path dan nama file header.php yang benar
-
-// Koneksi database
 include('../config/database.php');
 
 // Pastikan parameter id_periksa tersedia dari URL
@@ -25,6 +22,22 @@ if (isset($_GET['id_periksa'])) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 ?>
+    <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Sistem Informasi Publik - Poliklinik</title>
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <!-- Custom CSS -->
+            <script src="../assets/js/script.js"></script>
+        </head>
+        <body>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -85,6 +98,9 @@ if (isset($_GET['id_periksa'])) {
                 </div>
             </div>
         </div>
+    </body>
+
+    </html>
 <?php
     } else {
         echo "Data periksa tidak ditemukan.";
